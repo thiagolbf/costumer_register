@@ -14,6 +14,7 @@ export const Globalstyle = createGlobalStyle`
 
     :root {
         font-size: 16px;
+        --roboto: 'Roboto', sans-serif;
 
         //colors
 
