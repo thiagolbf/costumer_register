@@ -1,7 +1,9 @@
+import { Globalstyle } from "./style/global";
+
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
-import { Globalstyle } from "./style/global";
+import { RoutesComponent } from "./routes";
 
 function App() {
   return (
@@ -17,8 +19,7 @@ function App() {
         pauseOnFocusLoss
         draggable
       />
-
-      <h1>hello</h1>
+      <RoutesComponent />
     </>
   );
 }

@@ -2,12 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 export const Globalstyle = createGlobalStyle`
 
-    //reset CSS
+    /* Reset CSS */
+    
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+   
 
     :root {
         font-size: 16px;
