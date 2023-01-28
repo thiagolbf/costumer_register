@@ -12,7 +12,7 @@ export const HeaderComponent = () => {
     <>
       <Header responsive={responsive}>
         <p>data stone</p>
-        <Link to="/teste">Cadastro cliente</Link>
+        <Link to="/registercostumer">Cadastro cliente</Link>
         <Link to="/registerproduct">Cadastro produto</Link>
         <Link to="/teste">Associação de produtos</Link>
         <Link to="/teste">Listagem</Link>
