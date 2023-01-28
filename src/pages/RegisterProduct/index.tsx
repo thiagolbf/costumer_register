@@ -44,7 +44,7 @@ export const RegisterProductPage = () => {
           <InputComponent
             inputWidth="300px"
             icon={<AiOutlineFilePpt />}
-            placeholder="Nome Completo"
+            placeholder="Nome do produto"
             type="text"
             {...register("name")}
           />
