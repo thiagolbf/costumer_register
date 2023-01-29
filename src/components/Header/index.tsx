@@ -14,7 +14,7 @@ export const HeaderComponent = () => {
         <p>data stone</p>
         <Link to="/registercostumer">Cadastro cliente</Link>
         <Link to="/registerproduct">Cadastro produto</Link>
-        <Link to="/teste">Associação de produtos</Link>
+        <Link to="/association">Associação de produtos</Link>
         <Link to="/teste">Listagem</Link>
         <GiHamburgerMenu
           className="icon"
