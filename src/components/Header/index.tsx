@@ -15,7 +15,7 @@ export const HeaderComponent = () => {
         <Link to="/registercostumer">Cadastro cliente</Link>
         <Link to="/registerproduct">Cadastro produto</Link>
         <Link to="/association">Associação de produtos</Link>
-        <Link to="/teste">Listagem</Link>
+        <Link to="/list">Lista</Link>
         <GiHamburgerMenu
           className="icon"
           onClick={() => setResponsive(!responsive)}

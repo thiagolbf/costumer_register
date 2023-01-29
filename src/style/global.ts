@@ -34,7 +34,7 @@ export const Globalstyle = createGlobalStyle`
         --information: #155BCB;
 
         /*drop-shadow pallet*/
-        --drop-shadow: rgba(0, 0, 0, 0.25);
+        --drop-shadow: rgba(0, 0, 5, 0.6);
 
         button {
         cursor: pointer;

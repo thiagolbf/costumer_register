@@ -9,6 +9,8 @@ interface AssociationsProviderProps {
 interface AssociationsProviderData {
   associations: Association[];
   registerNewAssociation: (assotion: Association) => void;
+  changeProductAssociate: (product: Product) => void;
+  changeCostumerAssociate: (costumer: string, active: string) => void;
 }
 
 interface Association {
@@ -46,7 +48,6 @@ export const AssociationsProvider = ({
       }
     });
 
-    console.log(checkAssociation);
     if (checkAssociation) {
       toast.warning("Essa associação já foi realizada");
     } else {
@@ -55,9 +56,50 @@ export const AssociationsProvider = ({
     }
   };
 
+  const changeProductAssociate = (product: Product) => {
+    const verify = associations.map((element) => {
+      if (element.productAssociate.name === product.name) {
+        if (product.active === "true") {
+          element.productAssociate.active = "false";
+          return element;
+        } else if (product.active === "false") {
+          element.productAssociate.active = "true";
+          return element;
+        }
+      } else {
+        return element;
+      }
+    }) as NonNullable<Association[]>;
+
+    setAssociations(verify);
+  };
+
+  const changeCostumerAssociate = (costumer: string, active: string) => {
+    const verify = associations.map((element) => {
+      if (element.costumer === costumer) {
+        if (active === "true") {
+          element.active = "false";
+          return element;
+        } else if (active === "false") {
+          element.active = "true";
+          return element;
+        }
+      } else {
+        return element;
+      }
+    }) as NonNullable<Association[]>;
+
+    setAssociations(verify);
+  };
+
   return (
     <AssociationsContext.Provider
-      value={{ associations, registerNewAssociation }}
+      value={{
+        associations,
+        registerNewAssociation,
+        changeProductAssociate,
+        changeCostumerAssociate,
+      }}
     >
       {children}
     </AssociationsContext.Provider>
