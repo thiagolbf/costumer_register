@@ -30,6 +30,7 @@ export const Header = styled.header<HeaderProps>`
 
   svg.icon {
     display: none;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 600px) {
