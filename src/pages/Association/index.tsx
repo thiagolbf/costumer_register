@@ -4,6 +4,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
+import { ButtonComponent } from "../../components/Button";
+
 import { useContext } from "react";
 import { ProductsContext } from "../../providers/products";
 import { CostumersContext } from "../../providers/costumers";
@@ -74,7 +76,7 @@ export const AssociationPage = () => {
                 })}
               </select>
               {!!errors.costumername ? (
-                <span>{errors.costumername?.message}</span>
+                <span className="error">{errors.costumername?.message}</span>
               ) : null}
             </div>
             <div>
@@ -92,11 +94,11 @@ export const AssociationPage = () => {
                 })}
               </select>
               {!!errors.productname ? (
-                <span>{errors.productname?.message}</span>
+                <span className="error">{errors.productname?.message}</span>
               ) : null}
             </div>
           </div>
-          <button type="submit">Associar</button>
+          <ButtonComponent type="submit">Associar</ButtonComponent>
         </form>
       </AssociationContainer>
     </>

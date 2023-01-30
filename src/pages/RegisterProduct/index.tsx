@@ -1,6 +1,7 @@
 import { RegisterProductContainer } from "./style";
 
 import { InputComponent } from "../../components/Input";
+import { ButtonComponent } from "../../components/Button";
 import { AiOutlineFilePpt } from "react-icons/ai";
 
 import * as yup from "yup";
@@ -38,7 +39,7 @@ export const RegisterProductPage = () => {
   return (
     <>
       <RegisterProductContainer>
-        <h3>Registrar Produto</h3>
+        <h3>Cadastrar Produto</h3>
 
         <form onSubmit={handleSubmit(registerProduct)}>
           <InputComponent
@@ -58,7 +59,7 @@ export const RegisterProductPage = () => {
             <input type="radio" {...register("active")} value="false" />
             {!!errors.active ? <span>{errors.active?.message}</span> : null}
           </div>
-          <button type="submit">Registrar</button>
+          <ButtonComponent type="submit">Cadastrar</ButtonComponent>
         </form>
       </RegisterProductContainer>
     </>

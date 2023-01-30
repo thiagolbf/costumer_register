@@ -15,6 +15,7 @@ export const AssociationContainer = styled.div`
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
+
       > div {
         display: flex;
         flex-direction: column;
@@ -22,6 +23,16 @@ export const AssociationContainer = styled.div`
         > select {
           width: 200px;
           margin: 0 10px;
+          text-align: center;
+          font-size: 0.8rem;
+        }
+        > span {
+          text-align: center;
+        }
+
+        > span.error {
+          color: var(--error);
+          font-size: 0.7rem;
         }
       }
     }

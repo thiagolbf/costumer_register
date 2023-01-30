@@ -1,4 +1,5 @@
 import { InputComponent } from "../../components/Input";
+import { ButtonComponent } from "../../components/Button";
 import { RegisterCostumerContainer } from "./style";
 
 import { useState } from "react";
@@ -94,7 +95,7 @@ export const RegisterCostumerPage = () => {
   return (
     <>
       <RegisterCostumerContainer>
-        <h3>Registrar Cliente</h3>
+        <h3>Cadastrar Cliente</h3>
 
         <form onSubmit={handleSubmit(registerCostumer)}>
           <InputComponent
@@ -142,7 +143,7 @@ export const RegisterCostumerPage = () => {
             <input type="radio" {...register("active")} value="false" />
             {!!errors.active ? <span>{errors.active?.message}</span> : null}
           </div>
-          <button type="submit">Cadastrar</button>
+          <ButtonComponent type="submit">Cadastrar</ButtonComponent>
         </form>
       </RegisterCostumerContainer>
     </>
