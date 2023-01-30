@@ -1,5 +1,7 @@
 import { ButtonsContainer, ListContainer } from "./style";
 
+import { ButtonComponent } from "../../components/Button";
+
 import { useState } from "react";
 import { useContext } from "react";
 import { ProductsContext } from "../../providers/products";
@@ -22,7 +24,7 @@ export const ListPage = () => {
   return (
     <>
       <ButtonsContainer>
-        <button
+        <ButtonComponent
           onClick={() => {
             setShowAssociations(false);
             setShowCostumers(false);
@@ -30,8 +32,8 @@ export const ListPage = () => {
           }}
         >
           Produtos
-        </button>
-        <button
+        </ButtonComponent>
+        <ButtonComponent
           onClick={() => {
             setShowAssociations(false);
             setShowProducts(false);
@@ -39,8 +41,8 @@ export const ListPage = () => {
           }}
         >
           Clientes
-        </button>
-        <button
+        </ButtonComponent>
+        <ButtonComponent
           onClick={() => {
             setShowProducts(false);
             setShowCostumers(false);
@@ -48,56 +50,71 @@ export const ListPage = () => {
           }}
         >
           Associações
-        </button>
+        </ButtonComponent>
       </ButtonsContainer>
 
       <ListContainer>
-        {showProducts ? (
+        {showProducts && products.length > 0 ? (
           <>
-            {products.map((element, index) => {
-              return (
-                <ProductContainerComponent
-                  key={index}
-                  name={element.name}
-                  active={element.active}
-                />
-              );
-            })}
+            <h3>Produtos cadastrados</h3>
+            <div>
+              {products.map((element, index) => {
+                return (
+                  <ProductContainerComponent
+                    key={index}
+                    name={element.name}
+                    active={element.active}
+                  />
+                );
+              })}
+            </div>
           </>
+        ) : showProducts && products.length < 1 ? (
+          <h3>Nenhum produto cadastrado</h3>
         ) : null}
 
-        {showCostumers ? (
+        {showCostumers && costumers.length > 0 ? (
           <>
-            {costumers.map((element, index) => {
-              return (
-                <CostumerContainerComponent
-                  key={index}
-                  name={element.name}
-                  cpf={element.cpf}
-                  phone={element.phone}
-                  email={element.email}
-                  active={element.active}
-                />
-              );
-            })}
+            <h3>Clientes cadastrados</h3>
+            <div>
+              {costumers.map((element, index) => {
+                return (
+                  <CostumerContainerComponent
+                    key={index}
+                    name={element.name}
+                    cpf={element.cpf}
+                    phone={element.phone}
+                    email={element.email}
+                    active={element.active}
+                  />
+                );
+              })}
+            </div>
           </>
+        ) : showCostumers && costumers.length < 1 ? (
+          <h3>Nenhum cliente cadastrado</h3>
         ) : null}
 
-        {showAssociations ? (
+        {showAssociations && associations.length > 0 ? (
           <>
-            {associations.map((element, index) => {
-              return (
-                <AssociationContainerComponent
-                  key={index}
-                  costumer={element.costumer}
-                  email={element.email}
-                  active={element.active}
-                  name={element.productAssociate.name}
-                  activeProduct={element.productAssociate.active}
-                />
-              );
-            })}
+            <h3>Associações realizadas</h3>
+            <div>
+              {associations.map((element, index) => {
+                return (
+                  <AssociationContainerComponent
+                    key={index}
+                    costumer={element.costumer}
+                    email={element.email}
+                    active={element.active}
+                    name={element.productAssociate.name}
+                    activeProduct={element.productAssociate.active}
+                  />
+                );
+              })}
+            </div>
           </>
+        ) : showAssociations && associations.length < 1 ? (
+          <h3>Nenhuma associação realizada</h3>
         ) : null}
       </ListContainer>
     </>

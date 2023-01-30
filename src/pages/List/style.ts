@@ -15,9 +15,19 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const ListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  font-family: var(--roboto);
 
-  margin-top: 50px;
+  h3 {
+    text-align: center;
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 20px;
+
+    font-family: var(--roboto);
+  }
 `;
