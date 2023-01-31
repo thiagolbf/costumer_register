@@ -31,7 +31,7 @@ O projeto não possui dados mockados nem API, para fazer os testes basta realiza
 
 Não existe a possibilidade de criar produtos com o mesmo nome, o mesmo se aplica para cliente e não pode associar mais de uma vez o mesmo produto para o mesmo cliente.
 
-Por fim gostaria de ressaltar que utilizei REACT.JS por ainda não ter trabalho com VUE.JS, e pelo tempo que tinha em trabalhar na aplicação optei por seguir com react. Porém ressalto que estou totalmente disposto a trabalhar com VUE.JS e aprender essa tecnologia.
+Por fim gostaria de ressaltar que utilizei REACT.JS por ainda não ter trabalhado com VUE.JS, e pelo tempo que tinha em trabalhar na aplicação optei por seguir com react. Porém ressalto que estou totalmente disposto a trabalhar com VUE.JS e aprender essa tecnologia.
 
 
 
